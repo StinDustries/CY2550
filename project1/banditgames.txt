@@ -1,0 +1,105 @@
+While I was doing this project I made this document in case I needed to refer back to anything. Felt a shame to waste, so I figured I'd throw it in with the rest of everything in case I didn't screenshot anything properly or mis-copied a password.
+
+
+
+process for bandit1: ls into home/bandit0/readme
+password for bandit2: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+process for bandit2: vim ./- while in home/bandit1. Filename is a -
+password for bandit3: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+process for bandit3: Escape the spaces in the filename with a backslash. vim.
+password for bandit4: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+process for bandit4: use ls -a to show hidden files. vim. note: the ellipses are part of the filename.
+password for bandit5: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+process for bandit5: it's in file07. I'm sure there's a better way to do this, but you know what, ls worked.
+password for bandit6: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+process for bandit6: find command, flags "size 1033c", "readable", "! -executable".
+It's in maybehere07/.file2
+password for bandit7: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+process for bandit7: Navigate out to root and use find with size 33c, user bandit7, group bandit6. Tip: To remove messages with "permission denied", append "2>&1 | grep -v "Permission denied"" to send the output over to grep, and then remove all messages with the string.
+password for bandit8: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+process for bandit8: Print out data.txt somehow (sort works), grep using "millionth".
+password for bandit9: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+process for bandit9: Sort the file into datasorted.txt, uniq -u to print the only unique line.
+password for bandit10: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+process for bandit10: Use strings to get a list of strings, grep by ===
+password for bandit11: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+process for bandit11: base64 decode. that's it.
+password for bandit12: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+process for bandit12: the wikipedia page linked literally contains a tr implementation. strings the file into that, you're good.
+password for bandit13: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+process for bandit13: A hellish amount of checking filetype, changing names, and unzipping. vim.
+password for bandit14: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
+process for bandit14: Save the given private key to Desktop/privatekey.txt and use that as a -i flag for ssh. Simple as.
+password for bandit15: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+process for bandit15: telnet localhost 30000, submit the level's current password. Gotta love telnet.
+password for bandit16: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+process for bandit16: Use openssl to login to localhost:30001 with s_client. Not *really* sure what the vast majority of the text is, but it accepted the password fine and that's good for me.
+password for bandit17: kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
+process for bandit17: use nc -w -v 2 31000-32000 to determine which ports are listening. Then, since it's like 5 ports, brute force works fine. It's port 31790, need to use -ign_eof with ssl.
+password for bandit18: EReVavePLFHtFlFsjn3hyzMlvSuSAcRD
+
+process for bandit18: literally just use diff. little bit of a drop in *diff*iculty there :)
+password for bandit19: x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+
+process for bandit19: ssh takes a string input to run when you login, just give it "cat readme" and you're set.
+password for bandit20: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
+
+process for bandit20: append the given binary and cat the password.
+password for bandit21: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+
+process for bandit21: Use ncat to listen on a port and echo old password.
+password for bandit22: EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+
+process for bandit22: Go to the cron configs, look in bandit22 for the path to the .sh file, cat that, find the path to the output, cat that.
+password for bandit23: tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
+
+process for bandit23: Look at the config script, swap out bandit22 for bandit23, you're golden.
+password for bandit24: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
+
+process for bandit24: Apparently just randomly get the password by trying to create a dir at /tmp/bandit24pass, realizing that already exists, cat-ing the file, and finding the password?
+Actual process: Create a bash script to copy the password from etc to a tmp directory, change the perms on that directory so anyone can access it, throw that script into var/spool..., call it a day.
+Further edit: The passwords are *everywhere*. I even found one hidden in the bandit25 folder.
+password for bandit25: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
+
+process for bandit25: Create a brute force script, you're set. Send it to nc with the port and all works out fine. My script was just 4 nested for loops and an echo call.
+password for bandit26: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
+
+process for bandit26: Figure out how to find a user's shell location. Figure out that more is an implementation of vim, doesn't complete until the page has been *fully* shown, and that if your terminal is microscopic, more triggers, and you can escape to a vim editor. AWFUL solution. Then, :e the password file for the password.
+password for bandit27: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
+
+process for bandit27: I hate vim docs. APPARENTLY you can edit the shell variable to send you to /bin/bash instead of the weird custom one they had set up. Awful.
+password for bandit28: upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
+
+process for bandit28: Thank goodness it's just using git clone and adding a port number to the ssh link they gave. Vim the readme.
+password for bandit29: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
+
+process for bandit29: Check the commit logs, revert the commit, you're set.
+password for bandit30: 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7
+
+process for bandit30: Need to check the branch list with remote flag, switch to /dev, readme contains password.
+password for bandit31: qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL
+
+process for bandit31: There's a tag named secret that points to an object(?) that's the password.
+password for bandit32: fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy
+
+process for bandit32: Literally just git add force and push? This thing's got a *weird* difficulty curve
+password for bandit33: 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K
+
+process for bandit 33: Since the terminal changes everything to caps, google commands that can be sent without alphabetical characters, find out that $0 opens bash, and apparently we already have sufficient perms for bandit34's pass.
+password for bandit33: tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
